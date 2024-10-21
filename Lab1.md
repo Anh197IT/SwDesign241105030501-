@@ -9,3 +9,13 @@
 ### b. Biểu đồ package:
 ![Package Diagram](https://www.planttext.com/?text=VLJFRfim6B_p59yuhPhw0ZrCxM1Qgh9gLLZldrmBMoKs1JiAgdhOQSzHJJr6spdHJfNw7hp9FcX2JGmzHC4slxyVS5ePB8rTv45G8Bl5Z4FuunmIh7aPmdq0m7AiAlWgKSUIgqk1Qad_tH70Hn2qI8LCRHq9JLUeHAfHVJZQdMTMVaQLHG8NaLPPj_z0Fu_vog9AIzaJtz4wgLCYpLBPwLxJNJlyWsDtpikbPDpt74ichcrlgMTU8Kk5PT-5RRdfodVDi215irSVta3YGmatOA-IO-q5dox43HIZGJXZZ9E05oejgMaiOfj8RlUjkA8H3KDoCoZCYJII-g3RSQcfZFvfhvXRVz-XZ_HSlwAlkb77zcmGv1ksEoFzV5aPNYhCOLvNXYygjvuPxsPscQ6QeUDqPHDgnjPSNGZTFcYKN_A2sDrf4dAcTnHlLhXAQCnfYObzZK4Gztte9d1y_Cbxu4uWh9hj6cwQxPFAmlT0WtgdSFjNf8MDFmU4lBFDvhU2_FbV60I7Zjv56Ze0rcpMHHYCkFAmXvxpPlDKjwR_G2wRxIyxIJCw-hs39T6e2U-7uoLCHar9C2JuKq6t8Dd182T6S_kyPWA4RZQF1an9hK7-ylVbiMtybAkRzgFu7m00%5D(https://www.planttext.com/)
 ## 2. Cơ chế phân tích
+Xác thực và ủy quyền: Đảm bảo chỉ người dùng hợp lệ (nhân viên, quản trị viên) mới có thể truy cập hệ thống thông qua đăng nhập và phân quyền dựa trên vai trò.
+
+Lưu trữ và truy xuất dữ liệu an toàn: Mã hóa dữ liệu nhạy cảm (như thông tin tài khoản ngân hàng) và áp dụng kiểm soát truy cập để bảo mật dữ liệu.
+
+Kiểm tra và xác thực dữ liệu: Đảm bảo đầu vào hợp lệ, chẳng hạn số giờ làm việc không vượt quá giới hạn cho phép và phương thức thanh toán phải hợp lệ.
+
+Tự động hóa xử lý: Lập lịch tự động tính lương và gửi tiền vào tài khoản ngân hàng theo lịch trình hệ thống.
+Xử lý lỗi và khôi phục: Quản lý lỗi hiệu quả, ghi lại nhật ký hệ thống và khôi phục giao dịch nếu có lỗi xảy ra để bảo toàn dữ liệu.
+Quản lý phiên làm việc: Bảo mật phiên đăng nhập với cơ chế timeout và mã hóa phiên để tránh bị tấn công.
+Tích hợp hệ thống ngân hàng: Sử dụng API ngân hàng để tự động thực hiện các giao dịch chuyển khoản cho nhân viên.

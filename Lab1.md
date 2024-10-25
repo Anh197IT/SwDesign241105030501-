@@ -24,7 +24,7 @@ Các cơ chế phân tích:
 - Cơ chế phân tích tích hợp hệ thống ngân hàng: Sử dụng API ngân hàng để tự động thực hiện các giao dịch chuyển khoản cho nhân viên.
 
 Kết quả mong đợi: Dựa trên các cơ chế phân tích, hệ thống Payroll System sẽ đạt được các yêu cầu về bảo mật, hiệu năng, và tính chính xác. Các cơ chế này sẽ giúp: Bảo vệ dữ liệu nhạy cảm của nhân viên và giao dịch tài chính. Đảm bảo các quy trình nghiệp vụ được thực hiện một cách trơn tru và tự động hóa. Đảm bảo khả năng phục hồi và xử lý lỗi khi có sự cố xảy ra.
-## 3. Phân tích ca sử dụng 
+## 3. Phân tích ca sử dụng Payment
 ### 3.1. Xác định các lớp phân tích:
 
 A. Boundary Classes (Lớp biên):
@@ -117,3 +117,4 @@ B. Giải thích các quan hệ:
 - Payment - DirectDeposit/MailDelivery (1-0..1): đảm bảo chỉ một phương thức thanh toán được chọn (chuyển khoản hoặc gửi qua thư).
 - PaymentUI - PaymentController: UI phụ thuộc Controller để xử lý logic và xác thực nghiệp vụ.
 - PaymentController - Entities: Controller kết nối và điều phối luồng dữ liệu giữa UI và các lớp thực thể, tách biệt giao diện người dùng khỏi logic nghiệp vụ và dữ liệu hệ thống.
+## 4. Phân tích ca sử dụng Maintain Timecard

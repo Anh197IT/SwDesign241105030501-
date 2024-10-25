@@ -106,10 +106,8 @@ PaymentUI:
 - formData: dữ liệu biểu mẫu
 
 B. Quan hệ giữa các lớp:
-- Employee 1 --- 1 Payment (Mỗi nhân viên có một phương thức thanh toán)
-- Payment 1 --- 0..1 DirectDeposit (Payment có thể có DirectDeposit)
-- Payment 1 --- 0..1 MailDelivery (Payment có thể có MailDelivery)
-- PaymentUI --- PaymentController (UI phụ thuộc Controller)
-- PaymentController --- Entity Classes (Controller điều khiển các entity)
+
+![Class Diagram](https://www.planttext.com/api/plantuml/png/bLCzJyCm4DtpAqvTKIfOEw1Ab8412Gdn0rBNYYqSfqgSYWene0u8TUh8rb2nm008fcPWSCN_y3_Xd7wGb0J155ltthltxfnshBn89O5mYF3Y60w3lWY7bCAb0x0Jw1b8fkyb3BX-b2quLH6NlYqflDVM8ZDFfG-AwPHl2bVEgiU9DmoeLDyj5FCa0nNgj2GZGfJXTTLIaqhGfc67HvIe3ks7CL-rHTQx9NCCuTiGJ4-bNzIFJJO1fQSSpXaQcLNe7djSTAZW0neDbxABYSd67X1cijkYc4tP_Nn9O37X9hkfq5eDvI2KAWg5eD5Iy3ypkD0fmQF9Nacj_jdHKXSTpZ_0shq3XfP6CcUEY-ezaps3i7uJw5fC0e6PFoL5ySrxQUmrm7Npptg_BI3wpLdVre3TPXDFvPNaoDp0w1TEQTmr5CpdkliLqsn17x4Fo4WmCt5-8WeyHEUBkavm-VbqQl3RCVx6sWgoJMfJsRD_v1S0)
+
 ### 3.5 Kết quả mong đợi là các biểu đồ lớp mô tả lớp phân tích và giải thích
 

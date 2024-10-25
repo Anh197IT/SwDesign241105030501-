@@ -83,22 +83,27 @@ A. Thuộc tính chính:
 - id: mã nhân viên
 - name: tên nhân viên
 - status: trạng thái
+
 Payment:
 - id: mã thanh toán
 - type: loại thanh toán
 - status: trạng thái thanh toán
+
 DirectDeposit:
-bankInfo: thông tin ngân hàng
-accountNo: số tài khoản
+- bankInfo: thông tin ngân hàng
+- accountNo: số tài khoản
+
 MailDelivery:
-address: địa chỉ
-zipCode: mã bưu điện
+- address: địa chỉ
+- zipCode: mã bưu điện
+
 PaymentController:
-paymentType: loại thanh toán
-validationStatus: trạng thái xác thực
+- paymentType: loại thanh toán
+- validationStatus: trạng thái xác thực
+
 PaymentUI:
-displayMode: chế độ hiển thị
-formData: dữ liệu biểu mẫu
+- displayMode: chế độ hiển thị
+- formData: dữ liệu biểu mẫu
 
 B. Quan hệ giữa các lớp:
 - Employee 1 --- 1 Payment (Mỗi nhân viên có một phương thức thanh toán)

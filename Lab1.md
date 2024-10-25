@@ -76,38 +76,36 @@ MailDelivery:
 - Lưu trữ thông tin địa chỉ gửi thư
 - Xử lý thanh toán qua đường bưu điện
 ### 3.4 Xác Xác định một số thuộc tính và quan hệ giữa các lớp phân tích
+Lớp Employee:
+- Quan hệ 1-1 với Payment: Mỗi nhân viên có một phương thức thanh toán
+- Chứa thông tin cơ bản của nhân viên
+- Thuộc tính status để theo dõi trạng thái nhân viên
 
-A. Thuộc tính chính:
+Lớp Payment:
+- Là lớp trung tâm quản lý thông tin thanh toán
+- Quan hệ 1-0..1 với DirectDeposit và MailDelivery
+- Enum PaymentType xác định loại thanh toán
+- Theo dõi lịch sử thay đổi qua dateModified
 
- Employee:
-- id: mã nhân viên
-- name: tên nhân viên
-- status: trạng thái
+Lớp DirectDeposit:
+- Chứa thông tin chi tiết tài khoản ngân hàng
+- Phương thức validateBankDetails() đảm bảo tính hợp lệ
+- Độc lập với MailDelivery
 
-Payment:
-- id: mã thanh toán
-- type: loại thanh toán
-- status: trạng thái thanh toán
+Lớp MailDelivery:
+- Quản lý thông tin địa chỉ gửi thư
+- Phương thức validateAddress() kiểm tra địa chỉ
+- Độc lập với DirectDeposit
 
-DirectDeposit:
-- bankInfo: thông tin ngân hàng
-- accountNo: số tài khoản
+Lớp PaymentController:
+- Điều phối luồng xử lý giữa UI và Entity
+- Xử lý logic nghiệp vụ và validation
+- Kết nối với các lớp thực thể
 
-MailDelivery:
-- address: địa chỉ
-- zipCode: mã bưu điện
-
-PaymentController:
-- paymentType: loại thanh toán
-- validationStatus: trạng thái xác thực
-
-PaymentUI:
-- displayMode: chế độ hiển thị
-- formData: dữ liệu biểu mẫu
-
-B. Quan hệ giữa các lớp:
-
-![Class Diagram](https://www.planttext.com/api/plantuml/png/bLCzJyCm4DtpAqvTKIfOEw1Ab8412Gdn0rBNYYqSfqgSYWene0u8TUh8rb2nm008fcPWSCN_y3_Xd7wGb0J155ltthltxfnshBn89O5mYF3Y60w3lWY7bCAb0x0Jw1b8fkyb3BX-b2quLH6NlYqflDVM8ZDFfG-AwPHl2bVEgiU9DmoeLDyj5FCa0nNgj2GZGfJXTTLIaqhGfc67HvIe3ks7CL-rHTQx9NCCuTiGJ4-bNzIFJJO1fQSSpXaQcLNe7djSTAZW0neDbxABYSd67X1cijkYc4tP_Nn9O37X9hkfq5eDvI2KAWg5eD5Iy3ypkD0fmQF9Nacj_jdHKXSTpZ_0shq3XfP6CcUEY-ezaps3i7uJw5fC0e6PFoL5ySrxQUmrm7Npptg_BI3wpLdVre3TPXDFvPNaoDp0w1TEQTmr5CpdkliLqsn17x4Fo4WmCt5-8WeyHEUBkavm-VbqQl3RCVx6sWgoJMfJsRD_v1S0)
+Lớp PaymentFormUI và PaymentDisplayUI:
+- Tách biệt giao diện nhập liệu và hiển thị
+- Phụ thuộc vào PaymentController
+- Không trực tiếp tương tác với Entity
 
 ### 3.5 Kết quả mong đợi là các biểu đồ lớp mô tả lớp phân tích và giải thích
 

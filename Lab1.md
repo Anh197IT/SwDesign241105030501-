@@ -53,12 +53,14 @@ PaymentFormUI:
 - Hiển thị form chọn phương thức thanh toán
 - Thu thập thông tin từ người dùng
 - Hiển thị thông báo kết quả
+  
 B. Control Classes:
 
 PaymentController:
 - Xử lý logic nghiệp vụ
 - Kiểm tra tính hợp lệ của dữ liệu
 - Điều phối luồng xử lý giữa UI và entity
+  
 C. Entity Classes:
 
 Employee:

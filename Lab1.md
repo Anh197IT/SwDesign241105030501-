@@ -84,6 +84,7 @@ A. Thuộc tính chính:
 - MailDelivery: address, zipCode
 - PaymentController: paymentType, validationStatus
 - PaymentUI: displayMode, formData
+
 B. Quan hệ giữa các lớp:
 - Employee 1 --- 1 Payment (Mỗi nhân viên có một phương thức thanh toán)
 - Payment 1 --- 0..1 DirectDeposit (Payment có thể có DirectDeposit)

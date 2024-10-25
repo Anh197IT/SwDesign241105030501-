@@ -108,4 +108,12 @@ Lớp PaymentFormUI và PaymentDisplayUI: displayMode: chế độ hiển thị,
 - Không trực tiếp tương tác với Entity
 
 ### 3.5 Kết quả mong đợi là các biểu đồ lớp mô tả lớp phân tích và giải thích
+A. Biểu đồ lớp phân tích:
 
+![Class Diagram](https://www.planttext.com/api/plantuml/png/fPH1QzH05CVl-HIFlQZ85htkGMet7dfOALG_m3IPpGoTl8d9P26A1_7Gas3n8CLBLn5HA2tqrZccxFUOR-BBRdQJjAa8FILlPlw_z-R_NhAT6PQQF5RU0_3vL2A7e9m7e9pzbi2iF0KZScTF0Z3b6Ge8dFt5813b5KPUe5YMmOiuKRhW7Dvv08zbE89zaqhQfWXPpDinPJDvjbbvxzMCFLR474qVmXG98Ue3hoZeuT1Ao0oVw51E9IUvJr53zsNA0-FpH6Uopd70y70NfxgDO46WSpGlEuipfcJ5tY61pmsJAdluQ0GxMYlEiCaneHsVApdZQR5AmS8mvLcdoBSo6UkGz_6VhqxtiklBZpMQL2l5qrM2fF7aba4rLchS_xVbhtTNi51cYMB5v4PvKvt6P2PhwxkJ4ZjxBE5DpX24iqSGIMVFMMkAlCs039uEO3XSFjOD7y5WuknN2IZAxmWpMVv1qbvMs1C3YLXSBEOOqHGw-vk6K30QGgFBEGwyDMEDVRArHM_TPXD_JD9F11LvuUn7X4EXtTKF18ogZA8ynUWkLgUf3IfozcnvPJXONEHmVKnNFceA8ak7msSzNIF27X5-hh-fZQ9rfb9k32F1zMU2VyYfQhciNf7o2naIaikWgiJvNPYMn_UWtFBp7goRVluNojlc65P_gBy0)
+
+B. Giải thích các quan hệ:
+- Employee - Payment (1-1): đảm bảo mỗi nhân viên có một phương thức thanh toán duy nhất.
+- Payment - DirectDeposit/MailDelivery (1-0..1): đảm bảo chỉ một phương thức thanh toán được chọn (chuyển khoản hoặc gửi qua thư).
+- PaymentUI - PaymentController: UI phụ thuộc Controller để xử lý logic và xác thực nghiệp vụ.
+- PaymentController - Entities: Controller kết nối và điều phối luồng dữ liệu giữa UI và các lớp thực thể, tách biệt giao diện người dùng khỏi logic nghiệp vụ và dữ liệu hệ thống.

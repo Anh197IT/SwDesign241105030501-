@@ -78,12 +78,31 @@ MailDelivery:
 ### 3.4 Xác Xác định một số thuộc tính và quan hệ giữa các lớp phân tích
 
 A. Thuộc tính chính:
-- Employee: id, name, status
-- Payment: id, type, status
-- DirectDeposit: bankInfo, accountNo
-- MailDelivery: address, zipCode
-- PaymentController: paymentType, validationStatus
-- PaymentUI: displayMode, formData
+- Employee:
+-- id: mã nhân viên
+name: tên nhân viên
+status: trạng thái
+Payment:
+
+id: mã thanh toán
+type: loại thanh toán
+status: trạng thái thanh toán
+DirectDeposit:
+
+bankInfo: thông tin ngân hàng
+accountNo: số tài khoản
+MailDelivery:
+
+address: địa chỉ
+zipCode: mã bưu điện
+PaymentController:
+
+paymentType: loại thanh toán
+validationStatus: trạng thái xác thực
+PaymentUI:
+
+displayMode: chế độ hiển thị
+formData: dữ liệu biểu mẫu
 
 B. Quan hệ giữa các lớp:
 - Employee 1 --- 1 Payment (Mỗi nhân viên có một phương thức thanh toán)

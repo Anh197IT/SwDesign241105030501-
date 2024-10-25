@@ -42,6 +42,7 @@ C. Entity Classes (Lớp thực thể):
 - MailDelivery: Thông tin gửi qua thư
 
 3.2. Biểu đồ Sequence
+
 ![Sequence Diagram] (https://www.planttext.com/api/plantuml/png/fPJBIiD058RtynHdgOk-G1TIQBtXXIuYk1tJeJEOdedJYPYr2n4Hz0siBaH1K124174HwNlCcpYJ6jjuILlC9fnmvllF-VyaZRwcIaUzW13gQwbWkHS6CcQCxCa8ErJ5qAPnZw5UaQgtiqvyYLh9e7ZQ79K1KyHMGd-r5sLBAERh5WjbNtmztA8YQB50738L4r98GcsfB5O7dvlq7Djy-3WSODUprPtlSOhSaza05nP9gNy2C9wh3aScVTZCNYieX0OQchcMlKMnIOyHzhaqoGq2ThDh19vTOPU0lNue_39tdDr7JPFSHXxFdgsam6r7MNCGg-Sm5LiZDyb3-FVHcPRE1hxRzCcVoYblKWgi3jea0rbuiZ6ov0UeT0PguubiWcwLRRUGhWg01NrM9B1gyn9m457O6pv6y7ufJ7g2ytl_Vc7IC-gWfpdIi_gpcbznTZxt9q1Lhaz-4P-cVzUTRFctntatWbPkHj3296_XL8VhDWkJl7mJ6Q6ydEJb82l6i4F8B6bnuLuiHphRjQQDO6xQXaNO_z87)
 
 3.3. Nhiệm vụ từng lớp phân tích

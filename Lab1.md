@@ -78,11 +78,15 @@ MailDelivery:
 ### 3.4 Xác Xác định một số thuộc tính và quan hệ giữa các lớp phân tích
 
 A. Thuộc tính chính:
+
  Employee:
 - id: mã nhân viên
 - name: tên nhân viên
 - status: trạng thái
-- Payment: id: mã thanh toán, type: loại thanh toán, status: trạng thái thanh toán
+Payment:
+- id: mã thanh toán
+- type: loại thanh toán
+- status: trạng thái thanh toán
 DirectDeposit:
 bankInfo: thông tin ngân hàng
 accountNo: số tài khoản

@@ -76,33 +76,33 @@ MailDelivery:
 - Lưu trữ thông tin địa chỉ gửi thư
 - Xử lý thanh toán qua đường bưu điện
 ### 3.4 Xác Xác định một số thuộc tính và quan hệ giữa các lớp phân tích
-Lớp Employee:
+Lớp Employee: id, name, status: trạng thái
 - Quan hệ 1-1 với Payment: Mỗi nhân viên có một phương thức thanh toán
 - Chứa thông tin cơ bản của nhân viên
 - Thuộc tính status để theo dõi trạng thái nhân viên
 
-Lớp Payment:
+Lớp Payment:id, type, status: trạng thái thanh toán
 - Là lớp trung tâm quản lý thông tin thanh toán
 - Quan hệ 1-0..1 với DirectDeposit và MailDelivery
 - Enum PaymentType xác định loại thanh toán
 - Theo dõi lịch sử thay đổi qua dateModified
 
-Lớp DirectDeposit:
+Lớp DirectDeposit: bankInfo: thông tin ngân hàng, accountNo: số tài khoản
 - Chứa thông tin chi tiết tài khoản ngân hàng
 - Phương thức validateBankDetails() đảm bảo tính hợp lệ
 - Độc lập với MailDelivery
 
-Lớp MailDelivery:
+Lớp MailDelivery: address: địa chỉ, zipCode: mã bưu điện
 - Quản lý thông tin địa chỉ gửi thư
 - Phương thức validateAddress() kiểm tra địa chỉ
 - Độc lập với DirectDeposit
 
-Lớp PaymentController:
+Lớp PaymentController: paymentType: loại thanh toán, validationStatus: trạng thái xác thực
 - Điều phối luồng xử lý giữa UI và Entity
 - Xử lý logic nghiệp vụ và validation
 - Kết nối với các lớp thực thể
 
-Lớp PaymentFormUI và PaymentDisplayUI:
+Lớp PaymentFormUI và PaymentDisplayUI: displayMode: chế độ hiển thị, formData: dữ liệu biểu mẫu
 - Tách biệt giao diện nhập liệu và hiển thị
 - Phụ thuộc vào PaymentController
 - Không trực tiếp tương tác với Entity

@@ -48,18 +48,21 @@ C. Entity Classes (Lớp thực thể):
 3.3. Nhiệm vụ từng lớp phân tích
 
 A. Boundary Classes:
+
 PaymentFormUI:
 - Hiển thị form chọn phương thức thanh toán
 - Thu thập thông tin từ người dùng
 - Hiển thị thông báo kết quả
-  
+
 B. Control Classes:
+
 PaymentController:
 - Xử lý logic nghiệp vụ
 - Kiểm tra tính hợp lệ của dữ liệu
 - Điều phối luồng xử lý giữa UI và entity
-  
+
 C. Entity Classes:
+
 Employee:
 - Lưu trữ thông tin nhân viên
 - Quản lý liên kết với phương thức thanh toán

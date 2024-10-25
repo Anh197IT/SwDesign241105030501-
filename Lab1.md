@@ -28,3 +28,19 @@ Quản lý phiên làm việc: Bảo mật phiên đăng nhập với cơ chế 
 Tích hợp hệ thống ngân hàng: Sử dụng API ngân hàng để tự động thực hiện các giao dịch chuyển khoản cho nhân viên.
 
 Kết quả mong đợi: Dựa trên các cơ chế phân tích, hệ thống Payroll System sẽ đạt được các yêu cầu về bảo mật, hiệu năng, và tính chính xác. Các cơ chế này sẽ giúp: Bảo vệ dữ liệu nhạy cảm của nhân viên và giao dịch tài chính. Đảm bảo các quy trình nghiệp vụ được thực hiện một cách trơn tru và tự động hóa. Đảm bảo khả năng phục hồi và xử lý lỗi khi có sự cố xảy ra.
+## 3. Phân tích ca sử dụng 
+3.1.Xác định các lớp phân tích:
+A. Boundary Classes (Lớp biên):
+
+PaymentFormUI: Giao diện nhập liệu phương thức thanh toán
+PaymentDisplayUI: Giao diện hiển thị thông tin thanh toán
+
+B. Control Classes (Lớp điều khiển):
+
+PaymentController: Xử lý logic nghiệp vụ thanh toán
+C. Entity Classes (Lớp thực thể):
+
+Employee: Thông tin nhân viên
+Payment: Thông tin thanh toán
+DirectDeposit: Thông tin chuyển khoản
+MailDelivery: Thông tin gửi qua thư

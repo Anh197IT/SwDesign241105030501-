@@ -32,15 +32,15 @@ Kết quả mong đợi: Dựa trên các cơ chế phân tích, hệ thống Pa
 3.1.Xác định các lớp phân tích:
 
 A. Boundary Classes (Lớp biên):
-PaymentFormUI: Giao diện nhập liệu phương thức thanh toán
-PaymentDisplayUI: Giao diện hiển thị thông tin thanh toán
+- PaymentFormUI: Giao diện nhập liệu phương thức thanh toán
+- PaymentDisplayUI: Giao diện hiển thị thông tin thanh toán
 
 B. Control Classes (Lớp điều khiển):
-PaymentController: Xử lý logic nghiệp vụ thanh toán
+- PaymentController: Xử lý logic nghiệp vụ thanh toán
 
 C. Entity Classes (Lớp thực thể):
 
-Employee: Thông tin nhân viên
-Payment: Thông tin thanh toán
-DirectDeposit: Thông tin chuyển khoản
-MailDelivery: Thông tin gửi qua thư
+- Employee: Thông tin nhân viên
+- Payment: Thông tin thanh toán
+- DirectDeposit: Thông tin chuyển khoản
+- MailDelivery: Thông tin gửi qua thư

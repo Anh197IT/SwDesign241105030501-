@@ -25,7 +25,7 @@ Các cơ chế phân tích:
 
 Kết quả mong đợi: Dựa trên các cơ chế phân tích, hệ thống Payroll System sẽ đạt được các yêu cầu về bảo mật, hiệu năng, và tính chính xác. Các cơ chế này sẽ giúp: Bảo vệ dữ liệu nhạy cảm của nhân viên và giao dịch tài chính. Đảm bảo các quy trình nghiệp vụ được thực hiện một cách trơn tru và tự động hóa. Đảm bảo khả năng phục hồi và xử lý lỗi khi có sự cố xảy ra.
 ## 3. Phân tích ca sử dụng 
-3.1. Xác định các lớp phân tích:
+### 3.1. Xác định các lớp phân tích:
 
 A. Boundary Classes (Lớp biên):
 - PaymentFormUI: Giao diện nhập liệu phương thức thanh toán
@@ -41,11 +41,11 @@ C. Entity Classes (Lớp thực thể):
 - DirectDeposit: Thông tin chuyển khoản
 - MailDelivery: Thông tin gửi qua thư
 
-3.2. Biểu đồ Sequence
+### 3.2. Biểu đồ Sequence
 
 ![Sequence Diagram](https://www.planttext.com/api/plantuml/png/fPJBIiD058RtynHdgOk-G1TIQBtXXIuYk1tJeJEOdedJYPYr2n4Hz0siBaH1K124174HwNlCcpYJ6jjuILlC9fnmvllF-VyaZRwcIaUzW13gQwbWkHS6CcQCxCa8ErJ5qAPnZw5UaQgtiqvyYLh9e7ZQ79K1KyHMGd-r5sLBAERh5WjbNtmztA8YQB50738L4r98GcsfB5O7dvlq7Djy-3WSODUprPtlSOhSaza05nP9gNy2C9wh3aScVTZCNYieX0OQchcMlKMnIOyHzhaqoGq2ThDh19vTOPU0lNue_39tdDr7JPFSHXxFdgsam6r7MNCGg-Sm5LiZDyb3-FVHcPRE1hxRzCcVoYblKWgi3jea0rbuiZ6ov0UeT0PguubiWcwLRRUGhWg01NrM9B1gyn9m457O6pv6y7ufJ7g2ytl_Vc7IC-gWfpdIi_gpcbznTZxt9q1Lhaz-4P-cVzUTRFctntatWbPkHj3296_XL8VhDWkJl7mJ6Q6ydEJb82l6i4F8B6bnuLuiHphRjQQDO6xQXaNO_z87)
 
-3.3. Nhiệm vụ từng lớp phân tích
+### 3.3. Nhiệm vụ từng lớp phân tích
 
 A. Boundary Classes:
 
@@ -75,3 +75,20 @@ DirectDeposit:
 MailDelivery:
 - Lưu trữ thông tin địa chỉ gửi thư
 - Xử lý thanh toán qua đường bưu điện
+### 3.4 Xác Xác định một số thuộc tính và quan hệ giữa các lớp phân tích
+
+A. Thuộc tính chính:
+- Employee: id, name, status
+- Payment: id, type, status
+- DirectDeposit: bankInfo, accountNo
+- MailDelivery: address, zipCode
+- PaymentController: paymentType, validationStatus
+- PaymentUI: displayMode, formData
+B. Quan hệ giữa các lớp:
+- Employee 1 --- 1 Payment (Mỗi nhân viên có một phương thức thanh toán)
+- Payment 1 --- 0..1 DirectDeposit (Payment có thể có DirectDeposit)
+- Payment 1 --- 0..1 MailDelivery (Payment có thể có MailDelivery)
+- PaymentUI --- PaymentController (UI phụ thuộc Controller)
+- PaymentController --- Entity Classes (Controller điều khiển các entity)
+### 3.5 Kết quả mong đợi là các biểu đồ lớp mô tả lớp phân tích và giải thích
+

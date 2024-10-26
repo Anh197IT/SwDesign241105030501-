@@ -216,3 +216,45 @@ B. Giải thích:
 - TimecardUI - TimecardController: UI phụ thuộc Controller để xử lý logic
 - TimecardController - Entities: Controller điều phối luồng dữ liệu
 
+## 5. Hợp nhất 2 ca sử dụng
+Hợp nhất kết quả phân tích 2 ca sử dụng Payment và Maintain Timecard:
+
+### 5.1. Các lớp biên (Boundary Classes) hợp nhất:
+- TimecardFormUI: Giao diện nhập liệu thẻ chấm công
+- TimecardDisplayUI: Giao diện hiển thị thông tin thẻ chấm công  
+- PaymentFormUI: Giao diện quản lý thanh toán lương
+
+### 5.2. Các lớp điều khiển (Control Classes) hợp nhất:
+- TimecardController: Xử lý nghiệp vụ thẻ chấm công
+- PaymentController: Xử lý nghiệp vụ thanh toán lương
+
+### 5.3. Các lớp thực thể (Entity Classes) hợp nhất:
+- Employee: Thông tin nhân viên (mã, tên, phòng ban, mức lương)
+- Timecard: Thông tin thẻ chấm công (mã thẻ, ngày, trạng thái)
+- TimeEntry: Chi tiết giờ làm (ngày, số giờ, ghi chú)
+- ChargeCode: Thông tin mã phí (mã, mô tả, tài khoản)
+- Payment: Thông tin thanh toán (mã, ngày, số tiền, trạng thái)
+
+### 5.4. Các mối quan hệ chính sau khi hợp nhất:
+- Employee - Timecard (1-n): Một nhân viên có nhiều thẻ chấm công
+- Employee - Payment (1-n): Một nhân viên có nhiều lần thanh toán
+- Timecard - TimeEntry (1-n): Một thẻ chấm công có nhiều bản ghi giờ
+- TimeEntry - ChargeCode (n-1): Các bản ghi giờ thuộc về một mã phí
+- Payment - Timecard (1-1): Một thanh toán tương ứng với một thẻ chấm công
+- UI - Controller: Các giao diện sử dụng controller tương ứng
+- Controller - Entity: Các controller điều khiển luồng xử lý dữ liệu
+
+### 5.5. Các chức năng nghiệp vụ chính:
+- Quản lý thẻ chấm công: tạo mới, cập nhật, tính toán giờ làm
+- Quản lý thanh toán: tính lương, tạo phiếu thanh toán, kiểm tra ngân sách
+- Tích hợp giữa chấm công và thanh toán
+
+### 5.6. Các ràng buộc nghiệp vụ:
+- Thẻ chấm công phải được duyệt trước khi thanh toán
+- Tổng giờ làm phải nằm trong giới hạn cho phép
+- Thanh toán phải dựa trên thông tin chấm công và mức lương
+- Kiểm tra ngân sách trước khi thanh toán
+
+### 5.7. Luồng xử lý tích hợp:
+- Nhập thông tin chấm công -> Duyệt thẻ công -> Tính toán giờ làm
+- Tạo thanh toán -> Tính lương dựa trên giờ làm -> Kiểm tra ngân sách -> Thanh toán

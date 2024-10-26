@@ -45,63 +45,63 @@ C. Entity Classes (Lớp thực thể):
 
 A. Boundary Classes:
 
-PaymentFormUI:
-- Hiển thị form chọn phương thức thanh toán
-- Thu thập thông tin từ người dùng
-- Hiển thị thông báo kết quả
+- PaymentFormUI:
+  + Hiển thị form chọn phương thức thanh toán
+  + Thu thập thông tin từ người dùng
+  + Hiển thị thông báo kết quả
 
 B. Control Classes:
 
-PaymentController:
-- Xử lý logic nghiệp vụ
-- Kiểm tra tính hợp lệ của dữ liệu
-- Điều phối luồng xử lý giữa UI và entity
+- PaymentController:
+  + Xử lý logic nghiệp vụ
+  + Kiểm tra tính hợp lệ của dữ liệu
+  + Điều phối luồng xử lý giữa UI và entity
 
 C. Entity Classes:
 
-Employee:
-- Lưu trữ thông tin nhân viên
-- Quản lý liên kết với phương thức thanh toán
-Payment:
-- Lưu trữ thông tin phương thức thanh toán
-- Quản lý trạng thái thanh toán
-DirectDeposit:
-- Lưu trữ thông tin tài khoản ngân hàng
-- Xử lý thanh toán qua chuyển khoản
-MailDelivery:
-- Lưu trữ thông tin địa chỉ gửi thư
-- Xử lý thanh toán qua đường bưu điện
+- Employee:
+  + Lưu trữ thông tin nhân viên
+  + Quản lý liên kết với phương thức thanh toán
+- Payment:
+  + Lưu trữ thông tin phương thức thanh toán
+  + Quản lý trạng thái thanh toán
+- DirectDeposit:
+  + Lưu trữ thông tin tài khoản ngân hàng
+  + Xử lý thanh toán qua chuyển khoản
+- MailDelivery:
+  + Lưu trữ thông tin địa chỉ gửi thư
+  + Xử lý thanh toán qua đường bưu điện
 ### 3.4 Xác Xác định một số thuộc tính và quan hệ giữa các lớp phân tích
-Lớp Employee: id, name, status: trạng thái
-- Quan hệ 1-1 với Payment: Mỗi nhân viên có một phương thức thanh toán
-- Chứa thông tin cơ bản của nhân viên
-- Thuộc tính status để theo dõi trạng thái nhân viên
+- Lớp Employee: id, name, status: trạng thái
+  + Quan hệ 1-1 với Payment: Mỗi nhân viên có một phương thức thanh toán
+  + Chứa thông tin cơ bản của nhân viên
+  + Thuộc tính status để theo dõi trạng thái nhân viên
 
-Lớp Payment:id, type, status: trạng thái thanh toán
-- Là lớp trung tâm quản lý thông tin thanh toán
-- Quan hệ 1-0..1 với DirectDeposit và MailDelivery
-- Enum PaymentType xác định loại thanh toán
-- Theo dõi lịch sử thay đổi qua dateModified
+- Lớp Payment:id, type, status: trạng thái thanh toán
+  + Là lớp trung tâm quản lý thông tin thanh toán
+  + Quan hệ 1-0..1 với DirectDeposit và MailDelivery
+  + Enum PaymentType xác định loại thanh toán
+  + Theo dõi lịch sử thay đổi qua dateModified
 
-Lớp DirectDeposit: bankInfo: thông tin ngân hàng, accountNo: số tài khoản
-- Chứa thông tin chi tiết tài khoản ngân hàng
-- Phương thức validateBankDetails() đảm bảo tính hợp lệ
-- Độc lập với MailDelivery
+- Lớp DirectDeposit: bankInfo: thông tin ngân hàng, accountNo: số tài khoản
+  + Chứa thông tin chi tiết tài khoản ngân hàng
+  + Phương thức validateBankDetails() đảm bảo tính hợp lệ
+  + Độc lập với MailDelivery
 
-Lớp MailDelivery: address: địa chỉ, zipCode: mã bưu điện
-- Quản lý thông tin địa chỉ gửi thư
-- Phương thức validateAddress() kiểm tra địa chỉ
-- Độc lập với DirectDeposit
+- Lớp MailDelivery: address: địa chỉ, zipCode: mã bưu điện
+  + Quản lý thông tin địa chỉ gửi thư
+  + Phương thức validateAddress() kiểm tra địa chỉ
+  + Độc lập với DirectDeposit
 
-Lớp PaymentController: paymentType: loại thanh toán, validationStatus: trạng thái xác thực
-- Điều phối luồng xử lý giữa UI và Entity
-- Xử lý logic nghiệp vụ và validation
-- Kết nối với các lớp thực thể
+- Lớp PaymentController: paymentType: loại thanh toán, validationStatus: trạng thái xác thực
+  + Điều phối luồng xử lý giữa UI và Entity
+  + Xử lý logic nghiệp vụ và validation
+  + Kết nối với các lớp thực thể
 
-Lớp PaymentFormUI và PaymentDisplayUI: displayMode: chế độ hiển thị, formData: dữ liệu biểu mẫu
-- Tách biệt giao diện nhập liệu và hiển thị
-- Phụ thuộc vào PaymentController
-- Không trực tiếp tương tác với Entity
+- Lớp PaymentFormUI và PaymentDisplayUI: displayMode: chế độ hiển thị, formData: dữ liệu biểu mẫu
+  + Tách biệt giao diện nhập liệu và hiển thị
+  + Phụ thuộc vào PaymentController
+  + Không trực tiếp tương tác với Entity
 
 ### 3.5 Kết quả mong đợi
 A. Biểu đồ lớp phân tích:
@@ -176,33 +176,33 @@ C. Entity Classes:
 
 ### 4.4. Xác định thuộc tính và quan hệ
 
-Lớp Employee:
-- id, name, maxHours
-- Quan hệ 1-n với Timecard
+- Lớp Employee:
+  + id, name, maxHours
+  + Quan hệ 1-n với Timecard
 
-Lớp Timecard:
-- id, startDate, endDate, status, submitDate
-- Quan hệ 1-n với TimeEntry
-- Quan hệ n-1 với Employee
+- Lớp Timecard:
+  + id, startDate, endDate, status, submitDate
+  + Quan hệ 1-n với TimeEntry
+  + Quan hệ n-1 với Employee
 
-Lớp TimeEntry:
-- id, date, hours
-- Quan hệ n-1 với Timecard
-- Quan hệ n-1 với ChargeCode
+- Lớp TimeEntry:
+  + id, date, hours
+  + Quan hệ n-1 với Timecard
+  + Quan hệ n-1 với ChargeCode
 
-Lớp ChargeCode:
-- id, code, description, status
-- Quan hệ 1-n với TimeEntry
+- Lớp ChargeCode:
+  + id, code, description, status
+  + Quan hệ 1-n với TimeEntry
 
-Lớp TimecardController:
-- validationStatus
-- employeeId
-- currentTimecard
+- Lớp TimecardController:
+  + validationStatus
+  + employeeId
+  + currentTimecard
 
-Lớp TimecardFormUI/DisplayUI:
-- displayMode
-- formData
-- messages
+- Lớp TimecardFormUI/DisplayUI:
+  + displayMode
+  + formData
+  + messages
 
 ### 4.5. Kết quả mong đợi
 

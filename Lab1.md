@@ -205,11 +205,11 @@ C. Entity Classes:
   + messages
 
 ### 4.5. Kết quả mong đợi
-A. Biểu đồ lướp phân tích:
+A. Biểu đồ lớp phân tích:
 
 ![Class diagram](https://www.planttext.com/api/plantuml/png/ZLInRXGn4EttAuPhI8Wk4kqLKU0k0HGK8J3qmwvPZ-Ar5w-DM24AFeCQKL1GqN5AbI_PFyauUxVdMoqefP_Vp1k_D_9fuz7vKEdiWLUoab1h99CrLsHgT5X18JzWqFxS6d-9VF_44UhaNfEHlgqbMEULpR9SOzF0MLLhsqe9NpA0UOMN2iqxacO1RxmZKqPKMR4FrCgQyYccs976LaHOaDdsE3YC5t5QeUHIORNaUmQ_RiK5LJ97Lsp5cPRAc1BR2-c52la2LkXb1Br35b58gRWdemGtVqPs9xfK94Zw0TCX_6UEC-DTsmyITNU2ZUKEVBJXlRu3IaLB5KPl7ulbMBCDc_CWnEAkb4jR37w_Kkb3vfKLc9uzqeMo_tIQgwVyFBUkUllYJk98SH12KOGsDc2x2Yz91fwlFZY4Y5qHP-ImntlQfaxqKTifcHKrl8JjI2bwtFkRO0myj_LK4-PwPxMMhk_YqUwdD94Sx397CrZ-6VEuAipiTHx2QwdHapMDehh9XbMVFPx1V0upCzjju0BocpzmaWr093rAMFr-C4rrwr-uOVPWf4GcLoG1By2hqAs_v_2fMt_ZWcmKp_7noPGB2sYwzMyeklLFKoOJxTo-Ps4smKbBkU1ZwFx-CA1lhXEX2VhsyVVXxramckXKceA_i5i0)
 
-B. Các quan hệ chính:
+B. Giải thích:
 - Employee - Timecard (1-n): Một nhân viên có nhiều thẻ chấm công
 - Timecard - TimeEntry (1-n): Một thẻ chấm công có nhiều bản ghi giờ
 - TimeEntry - ChargeCode (n-1): Một bản ghi giờ thuộc về một số phí

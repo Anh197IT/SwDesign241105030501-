@@ -107,7 +107,7 @@ Lớp PaymentFormUI và PaymentDisplayUI: displayMode: chế độ hiển thị,
 - Phụ thuộc vào PaymentController
 - Không trực tiếp tương tác với Entity
 
-### 3.5 Kết quả mong đợi là các biểu đồ lớp mô tả lớp phân tích và giải thích
+### 3.5 Kết quả mong đợi
 A. Biểu đồ lớp phân tích:
 
 ![Class Diagram](https://www.planttext.com/api/plantuml/png/fPH1QzH05CVl-HIFlQZ85htkGMet7dfOALG_m3IPpGoTl8d9P26A1_7Gas3n8CLBLn5HA2tqrZccxFUOR-BBRdQJjAa8FILlPlw_z-R_NhAT6PQQF5RU0_3vL2A7e9m7e9pzbi2iF0KZScTF0Z3b6Ge8dFt5813b5KPUe5YMmOiuKRhW7Dvv08zbE89zaqhQfWXPpDinPJDvjbbvxzMCFLR474qVmXG98Ue3hoZeuT1Ao0oVw51E9IUvJr53zsNA0-FpH6Uopd70y70NfxgDO46WSpGlEuipfcJ5tY61pmsJAdluQ0GxMYlEiCaneHsVApdZQR5AmS8mvLcdoBSo6UkGz_6VhqxtiklBZpMQL2l5qrM2fF7aba4rLchS_xVbhtTNi51cYMB5v4PvKvt6P2PhwxkJ4ZjxBE5DpX24iqSGIMVFMMkAlCs039uEO3XSFjOD7y5WuknN2IZAxmWpMVv1qbvMs1C3YLXSBEOOqHGw-vk6K30QGgFBEGwyDMEDVRArHM_TPXD_JD9F11LvuUn7X4EXtTKF18ogZA8ynUWkLgUf3IfozcnvPJXONEHmVKnNFceA8ak7msSzNIF27X5-hh-fZQ9rfb9k32F1zMU2VyYfQhciNf7o2naIaikWgiJvNPYMn_UWtFBp7goRVluNojlc65P_gBy0)
@@ -118,3 +118,107 @@ B. Giải thích các quan hệ:
 - PaymentUI - PaymentController: UI phụ thuộc Controller để xử lý logic và xác thực nghiệp vụ.
 - PaymentController - Entities: Controller kết nối và điều phối luồng dữ liệu giữa UI và các lớp thực thể, tách biệt giao diện người dùng khỏi logic nghiệp vụ và dữ liệu hệ thống.
 ## 4. Phân tích ca sử dụng Maintain Timecard
+
+### 4.1. Xác định các lớp phân tích:
+
+A. Boundary Classes:
+- TimecardFormUI: Giao diện nhập liệu thẻ chấm công
+- TimecardDisplayUI: Giao diện hiển thị thông tin thẻ chấm công
+
+B. Control Classes:
+- TimecardController: Xử lý logic nghiệp vụ thẻ chấm công
+
+C. Entity Classes:
+- Employee: Thông tin nhân viên
+- Timecard: Thông tin thẻ chấm công
+- TimeEntry: Chi tiết giờ làm theo ngày và số phí
+- ChargeCode: Thông tin số hiệu phí
+
+### 4.2 Biểu đồ sequence
+
+![Sequence Diagram}()
+
+### 4.3. Nhiệm vụ từng lớp phân tích
+
+A. Boundary Classes:
+- TimecardFormUI:
+  + Hiển thị form nhập liệu thẻ chấm công
+  + Thu thập thông tin giờ làm và số phí
+  + Hiển thị danh sách số phí khả dụng
+  + Hiển thị thông báo lỗi/thành công
+
+- TimecardDisplayUI:
+  + Hiển thị thông tin thẻ chấm công
+  + Hiển thị trạng thái thẻ chấm công
+  + Hiển thị chế độ chỉ đọc khi đã nộp
+
+B. Control Classes:
+- TimecardController:
+  + Xử lý logic nghiệp vụ
+  + Kiểm tra tính hợp lệ của giờ làm
+  + Quản lý trạng thái thẻ chấm công
+  + Xử lý việc nộp thẻ chấm công
+  + Kết nối với CSDL dự án
+
+C. Entity Classes:
+- Employee:
+  + Lưu thông tin nhân viên
+  + Quản lý giới hạn giờ làm
+
+- Timecard:
+  + Lưu thông tin thẻ chấm công
+  + Quản lý trạng thái nộp/chưa nộp
+  + Quản lý khoảng thời gian
+
+- TimeEntry:
+  + Lưu chi tiết giờ làm theo ngày
+  + Liên kết với số phí
+
+- ChargeCode:
+  + Lưu thông tin số hiệu phí
+  + Quản lý trạng thái khả dụng
+
+### 4.4. Xác định thuộc tính và quan hệ
+
+Lớp Employee:
+- id, name, maxHours
+- Quan hệ 1-n với Timecard
+
+Lớp Timecard:
+- id, startDate, endDate, status, submitDate
+- Quan hệ 1-n với TimeEntry
+- Quan hệ n-1 với Employee
+
+Lớp TimeEntry:
+- id, date, hours
+- Quan hệ n-1 với Timecard
+- Quan hệ n-1 với ChargeCode
+
+Lớp ChargeCode:
+- id, code, description, status
+- Quan hệ 1-n với TimeEntry
+
+Lớp TimecardController:
+- validationStatus
+- employeeId
+- currentTimecard
+
+Lớp TimecardFormUI/DisplayUI:
+- displayMode
+- formData
+- messages
+
+### 4.5. Kết quả mong đợi
+
+A. Các quan hệ chính:
+- Employee - Timecard (1-n): Một nhân viên có nhiều thẻ chấm công
+- Timecard - TimeEntry (1-n): Một thẻ chấm công có nhiều bản ghi giờ
+- TimeEntry - ChargeCode (n-1): Một bản ghi giờ thuộc về một số phí
+- TimecardUI - TimecardController: UI phụ thuộc Controller để xử lý logic
+- TimecardController - Entities: Controller điều phối luồng dữ liệu
+
+B. Ý nghĩa:
+- Tách biệt giao diện người dùng (UI) và xử lý nghiệp vụ (Controller)
+- Đảm bảo tính toàn vẹn dữ liệu qua các ràng buộc quan hệ
+- Cho phép mở rộng chức năng mà không ảnh hưởng các thành phần khác
+- Hỗ trợ việc quản lý trạng thái và xác thực dữ liệu

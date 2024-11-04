@@ -23,7 +23,7 @@ B. Lớp Entity Classes
 C. Lớp Boundary Classes
 + PayrollAdministrator: Đại diện cho người dùng yêu cầu tạo báo cáo và xác định các tiêu chí, có quyền lưu hoặc loại bỏ báo cáo sau khi tạo.
 ### 4.2. Biểu đồ Sequence
-![Sequence Diagram]()
+![Sequence Diagram](https://www.planttext.com/api/plantuml/png/TL8xJiGm5EnzYgUjibAum1PeeQ6XGBidS19hry9hW_CSAMUWegJZKo2jXA3s5XH6tCCtmHjmuaYXoMSyCs_UoCiQgKQp4uIMg3HSqLOh8Swg7PUyHaq3I0fbP4Lr2xCLkr4QL-pMi1fdG6lGAK9A9J7e8_62ITPP9DGU8qmYnzuqeGmswy2Z6xPckk4bwoZr229aAZ6Sd8w3BG2zVLAG2HNU70eNVihmo45kt6CBXRVl25_tthwQY5rx-uc0MsVB7D3j9SYjUvRGyF0z9wC1myH-lpZpFCw2h7Lx0-LnHfJtxC7WJvT9VtZWK1cvoU4tTWpMdUTJQHAxYGgqjoyWnWNyN-2uw0M8xmypB9Cb5JR-S1VStTkSZ4NfKfT1JfPCLiVBzWC0)
 ### 4.3. Nhiệm vụ từng lớp phân tích
 + ReportRequest: Xác định và lưu trữ thông tin về loại báo cáo, khoảng thời gian, và danh sách nhân viên cần báo cáo.
 + ReportGenerator: Tạo báo cáo dựa trên thông tin từ ReportRequest và gửi báo cáo cho PayrollAdministrator.

@@ -7,5 +7,4 @@
 ## Phân tích ca sử dụng Create Employee Report
 ## Phân tích ca sử dụng Maintain Employee Information
 ## Phân tích ca sử dụng Run Payroll
-## Phân tích ca sử dụng Select Payment Method
 # Viết code Java mô phỏng ca sử dụng Maintain Timecard.

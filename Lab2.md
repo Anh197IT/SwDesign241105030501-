@@ -256,26 +256,21 @@ public class Timecard {
     private Date date;
     private String employeeId;
     private double hoursWorked;
-
     public Timecard(Date date, String employeeId, double hoursWorked) {
         this.date = date;
         this.employeeId = employeeId;
         this.hoursWorked = hoursWorked;
     }
-
     // Getters và Setters
     public Date getDate() {
         return date;
     }
-
     public String getEmployeeId() {
         return employeeId;
     }
-
     public double getHoursWorked() {
         return hoursWorked;
     }
-
     public void setHoursWorked(double hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
@@ -285,12 +280,10 @@ import java.util.List;
 
 public class TimecardService {
     private List<Timecard> timecards = new ArrayList<>();
-
     // Phương thức thêm thẻ chấm công
     public void addTimecard(Timecard timecard) {
         timecards.add(timecard);
     }
-
     // Phương thức sửa thẻ chấm công
     public void updateTimecard(String employeeId, Date date, double hoursWorked) {
         for (Timecard timecard : timecards) {
@@ -311,7 +304,6 @@ public class Main {
         / Thêm một thẻ chấm công mới
         Timecard timecard1 = new Timecard(new Date(), "E001", 8);
         timecardService.addTimecard(timecard1);
-
         // Cập nhật thẻ chấm công
         timecardService.updateTimecard("E001", timecard1.getDate(), 7.5);
     }

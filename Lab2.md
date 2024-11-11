@@ -250,8 +250,9 @@ C. Lớp Control Classes
   - Thuộc tính: employeeID, amount, payDate, paymentMethod
   - Quan hệ: Được lưu trữ hoặc in ra sau khi tính toán xong, dùng để ghi lại chi tiết lương của nhân viên.
 # Viết code Java mô phỏng ca sử dụng Maintain Timecard.
+*
 
-*import java.util.Date;
+import java.util.Date;
 public class Timecard {
     private Date date;
     private String employeeId;
@@ -307,4 +308,6 @@ public class Main {
         // Cập nhật thẻ chấm công
         timecardService.updateTimecard("E001", timecard1.getDate(), 7.5);
     }
-}*
+}
+
+*

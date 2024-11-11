@@ -250,3 +250,69 @@ C. Lớp Control Classes
   - Thuộc tính: employeeID, amount, payDate, paymentMethod
   - Quan hệ: Được lưu trữ hoặc in ra sau khi tính toán xong, dùng để ghi lại chi tiết lương của nhân viên.
 # Viết code Java mô phỏng ca sử dụng Maintain Timecard.
+import java.util.Date;
+
+public class Timecard {
+    private Date date;
+    private String employeeId;
+    private double hoursWorked;
+
+    public Timecard(Date date, String employeeId, double hoursWorked) {
+        this.date = date;
+        this.employeeId = employeeId;
+        this.hoursWorked = hoursWorked;
+    }
+
+    // Getters và Setters
+    public Date getDate() {
+        return date;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public double getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public void setHoursWorked(double hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+}
+import java.util.ArrayList;
+import java.util.List;
+
+public class TimecardService {
+    private List<Timecard> timecards = new ArrayList<>();
+
+    // Phương thức thêm thẻ chấm công
+    public void addTimecard(Timecard timecard) {
+        timecards.add(timecard);
+    }
+
+    // Phương thức sửa thẻ chấm công
+    public void updateTimecard(String employeeId, Date date, double hoursWorked) {
+        for (Timecard timecard : timecards) {
+            if (timecard.getEmployeeId().equals(employeeId) && timecard.getDate().equals(date)) {
+                timecard.setHoursWorked(hoursWorked);
+                System.out.println("Timecard updated successfully for " + employeeId);
+                return;
+            }
+        }
+        System.out.println("Timecard not found for " + employeeId + " on date " + date);
+    }
+}
+import java.util.Date;
+
+public class Main {
+    public static void main(String[] args) {
+        TimecardService timecardService = new TimecardService();
+        / Thêm một thẻ chấm công mới
+        Timecard timecard1 = new Timecard(new Date(), "E001", 8);
+        timecardService.addTimecard(timecard1);
+
+        // Cập nhật thẻ chấm công
+        timecardService.updateTimecard("E001", timecard1.getDate(), 7.5);
+    }
+}

@@ -3,13 +3,12 @@
 ## 1. Subsystem context diagrams (Hãy vẽ biểu đồ ngữ cảnh của các hệ thống con và giải thích.)
 +  PayrollSystem (Hệ thống Lương)
   
-  Interface IPayroll {
-      calculateSalary(employeeId: String): Double
-      processPay(employeeId: String)
-      generatePayslip(employeeId: String)
-      runPayroll()
-  }
-  
+  + Interface IPayroll {
+      -  calculateSalary(employeeId: String): Double
+      -  processPay(employeeId: String)
+      -  generatePayslip(employeeId: String)
+      -  runPayroll()
+    }
   + Chức năng:
     - Tính toán lương cho nhân viên
     - Xử lý thanh toán lương
@@ -25,12 +24,12 @@ Interface IEmployeeManagement {
     validateLogin(username: String, password: String): Boolean
 }
 
- + Chức năng:
-  - Tạo mới nhân viên
-  - Cập nhật thông tin nhân viên
-  - Xóa nhân viên
-  - Truy xuất thông tin nhân viên
-  - Xác thực đăng nhập
+   + Chức năng:
+    - Tạo mới nhân viên
+    - Cập nhật thông tin nhân viên
+    - Xóa nhân viên
+    - Truy xuất thông tin nhân viên
+    - Xác thực đăng nhập
 TimeManagementSystem (Hệ thống Quản lý Thời gian)
 less
 

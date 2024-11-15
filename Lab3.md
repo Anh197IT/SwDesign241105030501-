@@ -84,22 +84,7 @@ C. Mối quan hệ giữa các hệ thống con
   - Tương tác với Commissioned Employee
   - Quản lý đơn hàng và tính hoa hồng
 ## 2. Analysis class to design element map (Hãy ánh xạ các lớp phân tích đến các phần tử thiết kế.)
-+ Analysis Classes
-  - LoginForm
-  - MaintainTimecardForm
-  - TimecardController
-  - SystemClockInterface
-  - PayrollController
-  - Paycheck
-+ Design Elements
-  - LoginForm_D
-  - MainEmployeeForm
-  - TimecardForm
-  - MainApplicationForm
-  - TimecardController_D
-  - SystemClockInterface_D
-  - PayrollController_D
-  - Paycheck_D
+
 ## 3. Design element to owning package map (Hãy ánh xạ các phần tử thiết kế vào các gói.)
 ## 4. Architectural layers and their dependencies (Hãy vẽ biểu đồ mô tả các layers trong hệ thống và quan hệ giữa chúng.)
 

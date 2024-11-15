@@ -85,8 +85,36 @@ C. Mối quan hệ giữa các hệ thống con
   - Quản lý đơn hàng và tính hoa hồng
 ## 2. Analysis class to design element map (Hãy ánh xạ các lớp phân tích đến các phần tử thiết kế.)
 
-## 3. Design element to owning package map (Hãy ánh xạ các phần tử thiết kế vào các gói.)
-## 4. Architectural layers and their dependencies (Hãy vẽ biểu đồ mô tả các layers trong hệ thống và quan hệ giữa chúng.)
+  | Analysis Classes | Design Elements |
+  | :---| ---:|
+  |LoginForm | LoginForm |
+  |MaintainTimecardForm | MainEmployeeForm | 
+  || TimecardForm |
+  || MainApplicationForm |
+  |TimecardController | TimecardController |
+  |SystemClockInterface | SystemClockInterface |
+  |PayrollController | PayrollController |
+  |Paycheck | PayCheck |
 
+## 3. Design element to owning package map (Hãy ánh xạ các phần tử thiết kế vào các gói.)
+
+  | Design Element	| "Owning" Package |
+  | :---| ---:|
+  |LoginForm |	Middleware::Security:GUI Framework |
+  |MainEmployeeForm |	Applications::Employee Activities |
+  |TimecardForm |	Middleware::Security:GUI Framework |
+  |MainApplicationForm |	Applications::Employee Activities |
+  |TimecardController |	Applications::Payroll |
+  |SystemClockInterface |	Applications::Payroll |
+  |PayrollController |	Applications::Payroll |
+  |Paycheck |	Business Services::Payroll Artifacts |
+
+## 4. Architectural layers and their dependencies (Hãy vẽ biểu đồ mô tả các layers trong hệ thống và quan hệ giữa chúng.)
+![Package Diagram](https://www.planttext.com/api/plantuml/png/XLFRJkCm47sFb7yOyR1l_0125Msv2Ab8IDrzMC4A3SvGhDYUQEnIHQZ_ldOR1xV0RbvYpyoPCvVZ2nzGmjgQkgehtshNeQ05nRPZHox0Urr1_6QesfNmsZLpDYomqAlNy9kCuSqGmDAGx9qp4wFhQfjoTl68AuAJytE3FSbaykZkTDCOsg3GsTcIr5fqw1_TpQzRk8xaj65fJm0zs34kb_6mu9Lsropsps3ugIqfb6QmVSivxJgZ5GRDpk-IuuSXPnznLxOpt1F1L0NzfeEcFOPizuIZASDsTToXTXbMr3Vw2lx2lTt_ZkZliHSsPaVPxSy7NBddERkGd2GbsxBtWUpSi6flNI1vGKMbVyZ-2Rpzn_HcQwyTUGzBaZUjXd4yP-ln_0OAc4hGaJuC4y-tWsPYh7ebrHvLKUp-z7HIRgkkojKbPwuZuHm70adg17uf59Io9uNDix8zB59tTKMkWOJwZ3uWZHBFxIOHgl_3Fye2kCI0y6CStrVWYtY93_4l)
+  + Quan hệ giữa các layer:
+    - Middleware phụ thuộc vào Application
+    - Application phụ thuộc vào Business Services
+    - Mỗi layer chỉ giao tiếp với layer ngay dưới nó
+    - Tuân thủ nguyên tắc phân tầng và dependency inversion
 
 
